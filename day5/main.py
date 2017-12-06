@@ -16,6 +16,7 @@ def part1():
     linkedList = LinkedList()
     for each in instructions:
         linkedList.append(int(each))
+    instructions.close()
 
     steps = 0
     nodePtr = linkedList.getFront()
@@ -43,6 +44,7 @@ def part2():
     linkedList = LinkedList()
     for each in instructions:
         linkedList.append(int(each))
+    instructions.close()
 
     steps = 0 
     nodePtr = linkedList.getFront()
@@ -67,11 +69,5 @@ def part2():
                     break
     print(steps)
 
-def dev():
-    myList = LinkedList()
-    for num in range(5):
-        myList.append(num)
-
-    traverse(myList.getFront())
-
+part1()
 part2()
