@@ -40,6 +40,9 @@ class Graph:
 
         self.__last.setData(total)
 
+    def getLayer(self):
+        return math.ceil(math.sqrt(self.__last.getIndex())) // 2
+
     def append(self, index):
         if self.isEmpty():
             newNode = Node(index, 1)
