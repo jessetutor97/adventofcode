@@ -24,7 +24,4 @@ def main():
 
     print(graph2.getLast().getData())
 
-def main2():
-    num = int(input("Enter a number: "))
-
 main()

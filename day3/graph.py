@@ -3,6 +3,7 @@ from node import Node
 
 class Graph:
     def __init__(self):
+        # Port is the center of the graph
         self.__port = None
         self.__last = None
         self.__size = 0
@@ -19,6 +20,7 @@ class Graph:
     def getSize(self):
         return self.__size
 
+    # Sets the data in the last node to the sum of the data in all adjacent nodes
     def __getSum(self):
         total = 0
         if self.__last.getLeft() != None:
@@ -40,6 +42,7 @@ class Graph:
 
         self.__last.setData(total)
 
+    # Returns which layer of the graph the last node is on
     def getLayer(self):
         return math.ceil(math.sqrt(self.__last.getIndex())) // 2
 
@@ -56,9 +59,10 @@ class Graph:
         newNode.setPrev(self.__last)
 
         layer = math.ceil(math.sqrt(index)) // 2
-        width = layer * 2
 
+        # i is the layer width 
         i = 2
+        # count is the index pointer
         count = 1
         char = ''
         if layer == 0:
@@ -104,11 +108,15 @@ class Graph:
             self.__size += 1
             return
 
+        # This list is the number of adjacent nodes for nodes 2-10
         layer1list = [1, 2, 3, 2, 3, 2, 4, 3, 2]
         if layer == 1:
             adj = layer1list[self.__size - 1]
 
+        # After layer 1, the number of adjacent nodes for any given node follows a pattern
+        # i is the layer width
         i = 4
+        # count is the index pointer
         count = 9
         for num in range(layer - 1):
             adj = 2

@@ -1,5 +1,6 @@
 from linkedlist import LinkedList
 
+# Takes a LinkedList object and returns a python list
 def getConfig(linkedList):
     list1 = []
     nodePtr = linkedList.getFront()
@@ -14,10 +15,12 @@ def main():
     myList = banks.readline().split()
     banks.close()
 
+    # Linked list is a circular linked list
     linkedList = LinkedList()
     for each in myList:
         linkedList.append(int(each))
 
+    # configList is a two-dimensional list that stores each configuration state
     configList = []
     found = False
     steps = 0

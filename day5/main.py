@@ -1,18 +1,9 @@
 from linkedlist import LinkedList
 
-def traverse(nodePtr):
-    while nodePtr != None:
-        print(nodePtr.getData())
-        nodePtr = nodePtr.getNext()
-
-def traverseBack(nodePtr):
-    while nodePtr != None:
-        print(nodePtr.getData())
-        nodePtr = nodePtr.getPrev()
-
 def part1():
     instructions = open('input.txt', 'r')
 
+    # Linked list is a doubly linked list
     linkedList = LinkedList()
     for each in instructions:
         linkedList.append(int(each))
@@ -36,6 +27,7 @@ def part1():
                 nodePtr = nodePtr.getPrev()
                 if nodePtr == None:
                     break
+
     print(steps)
 
 def part2():

@@ -1,5 +1,6 @@
 import random
 
+# Returns a word that is sorted alphabetically from A-Z
 def sort(word):
     list1 = []
     for letter in word:

@@ -19,12 +19,14 @@ def main():
     print(checksum)
 
     spreadsheet = open('input.txt', 'r')
+    # Linked list is a circular linked list
     linkedList = LinkedList()
     total = 0
     for line in spreadsheet:
         numList = line.split()
         for num in numList:
             linkedList.append(int(num))
+
         nodePtr1 = linkedList.getFront()
         for i in range(linkedList.getSize()):
             num = nodePtr1.getData()

@@ -26,6 +26,7 @@ def part1_revised():
     line1 = myFile.readline().rstrip('\n')
     myFile.close()
 
+    #Linked list is a circular linked list
     myList = LinkedList()
     for each in line1:
         myList.append(int(each))
@@ -39,6 +40,7 @@ def part1_revised():
 
     print(total)
 
+# Returns data at an offset of the linked list
 def getOffset(start, offset):
     nodePtr = start
     for num in range(offset):
@@ -57,6 +59,7 @@ def part2():
 
     nodePtr = myList.getFront()
     total = 0
+    # Offset is halfway around
     offset = myList.getSize() // 2
     for num in range(myList.getSize()):
         if nodePtr.getData() == getOffset(nodePtr, offset):
